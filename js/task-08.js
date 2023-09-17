@@ -11,10 +11,10 @@ function handleSubmit(event) {
     }
 
     const user = {};
-    user.email = e_mail;
-    user.password = password;
+    user.Email = e_mail;
+    user.Password = password;
     console.log(user);
-    // form.reset();
+    form.reset();
 }
 
 loginForm.addEventListener('submit', handleSubmit);
