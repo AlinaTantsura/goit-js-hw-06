@@ -19,5 +19,4 @@ const allImages = images.map(image =>{
   
 } 
 ).join('');
-console.log(allImages);
 list.insertAdjacentHTML('afterbegin', allImages);
