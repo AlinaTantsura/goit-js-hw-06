@@ -9,12 +9,15 @@ function handleSubmit(event) {
     if (e_mail === '' || password === '') {
         alert('All fields must be filled!!!')
     }
-
-    const user = {};
-    user.Email = e_mail;
-    user.Password = password;
-    console.log(user);
-    form.reset();
+    else{
+        const user = {};
+        user.Email = e_mail;
+        user.Password = password;
+        console.log(user);
+        form.reset();
+    }
+    
+   
 }
 
 loginForm.addEventListener('submit', handleSubmit);

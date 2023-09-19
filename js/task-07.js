@@ -5,4 +5,4 @@ function changeFontStyle(event) {
     const value = event.currentTarget.value;
     text.style.fontSize = value + 'px';
 }
-range.addEventListener('change', changeFontStyle);
+range.addEventListener('input', changeFontStyle);
