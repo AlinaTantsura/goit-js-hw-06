@@ -11,20 +11,26 @@ const boxes = document.querySelector('#boxes');
 
 createBtn.addEventListener('click', createBoxes);
 destroyBtn.addEventListener('click', destroyBoxes);
-const newBoxes = [];
-function createBoxes(amount) {
-  for (let i = 0; i < amount; i += 1){
-    const element = document.createElement('div');
-    element.style.width = '30px';
-    element.style.height = element.style.width;
-    element.style.border = '2px solid red';
-    newBoxes.push(element);
-  }
-  return newBoxes;
+input.addEventListener('change', findNumber);
+let number = 0;
+function findNumber(event) {
+  number = Number(event.currentTarget.value);
+  return number;
 }
 
-console.log(createBoxes(5));
-boxes.append(...newBoxes);
+function createBoxes(amount) {
+  amount = number;
+  const newBoxes = [];
+  for (let i = 0; i < amount; i += 1){
+    const element = document.createElement('div');
+    let widthNow = 30 + i * 10;
+    element.style.width = `${widthNow}px`;
+    element.style.height = element.style.width;
+    element.style.backgroundColor = getRandomHexColor();
+    newBoxes.push(element);
+  }
+  boxes.append(...newBoxes);
+}
 
 function destroyBoxes() {
   boxes.innerHTML = '';
